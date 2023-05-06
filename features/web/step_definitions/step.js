@@ -139,22 +139,22 @@ const expect = require('chai').expect;
 
 
 When('I enter email {kraken-string}', async function (email) {
-    let element = await this.driver.$('#ember7');
+    let element = await this.driver.$('input[name="identification"]');
     return await element.setValue(email);
 });
 
 When('I enter password {kraken-string}', async function (password) {
-    let element = await this.driver.$('#ember10');
+    let element = await this.driver.$('input[name="password"]');
     return await element.setValue(password);
 });
 
-When('I click next', async function () {
-    let element = await this.driver.$('#ember12');
+When('I click next', async function() {
+    let element = await this.driver.$('button[class="login gh-btn gh-btn-blue gh-btn-block gh-btn-icon ember-view"]');
     return await element.click();
 })
 
-When('I click tags', async function () {
-    let element = await this.driver.$('#ember38');
+When('I click tags', async function() {
+    let element = await this.driver.$('a[href="#/tags/"]');
     return await element.click();
 })
 
@@ -321,4 +321,45 @@ Then('I check Post with title {kraken-string} is in the list', async function (p
 Then('I check Post with title {kraken-string} is not in the list', async function (postTitle) {
     let element = await this.driver.$(".//*//ol[contains(@class, 'posts-list')]//*//h3[text() = '" + postTitle + "']");
     return expect(await element.isExisting()).to.be.false;
+});
+
+When('I click post-settings', async function() {
+    let element = await this.driver.$('button[class="post-settings"]');
+    return await element.click();
+});
+
+When('I click tag-list', async function() {
+    let element = await this.driver.$('input[class="ember-power-select-trigger-multiple-input"]');
+    return await element.click();
+});
+
+When('I click tag-element', async function() {
+    let element = await this.driver.$(".//*//li[text() = '" + "Prueba asociar tag" + "']");
+    return await element.click();
+});
+
+When('I click close-post-settings', async function() {
+    let element = await this.driver.$('button[class="close settings-menu-header-action"]');
+    return await element.click();
+});
+
+When('I click publish-after-tag', async function() {
+    let element = await this.driver.$('div.gh-publishmenu-trigger');
+    return await element.click();
+});
+
+When('I click confirm-publish-after-tag', async function() {
+    let element = await this.driver.$('button[class="gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view"]');
+    return await element.click();
+});
+
+When('I click return-posts', async function() {
+    let element = await this.driver.$('a[class="blue link fw4 flex items-center ember-view"]');
+    return await element.click();
+});
+
+When('I click internal-tags', async function() {
+    let element = await this.driver.$('div.gh-contentfilter button:contains("Internal tags")');
+    console.log('Este es el elemento: ', element);
+    return await element.click();
 });

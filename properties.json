@@ -12,5 +12,7 @@
     "page_title_delete": "pagina-1-delete",
     "page_title_schedule": "pagina-2-schedule",
     "page_title_draft": "pagina-3-draft",
-    "edicion_description": "descripcion nueva"
+    "edicion_description": "descripcion nueva",
+    "tagpruebaasociar": "Prueba asociar tag",
+    "tagdescripciónpruebaasociar": "Se asocia un tag de prueba para validar la funcionalidad"
 }
