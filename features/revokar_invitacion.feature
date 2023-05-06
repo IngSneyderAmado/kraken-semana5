@@ -22,6 +22,7 @@ Scenario: Se inicia sesion y se va al menu staff para invitar un usuario
     And I wait for 5 seconds
     And I click staff
     And I wait for 2 seconds
+    And I reload
     
     
     #And I click tags
