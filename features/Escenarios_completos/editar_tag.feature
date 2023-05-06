@@ -1,7 +1,7 @@
-Feature: Crear tag
+Feature: Editar tag
 
 @user1 @web
-Scenario: Se crea un tag desde el inicio de sesión hasta la finalización de la creación
+Scenario: Se edita un tag desde el inicio de sesión hasta la finalización de la edición
     Given I navigate to page "http://localhost:2368/ghost"
     And I wait for 5 seconds
     When I enter email "<Usuario1>"

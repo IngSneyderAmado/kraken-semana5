@@ -1,7 +1,7 @@
-Feature: Crear tag
+Feature: Eliminar tag
 
 @user1 @web
-Scenario: Se crea un tag desde el inicio de sesión hasta la finalización de la creación
+Scenario: Se elimina un tag desde el inicio de sesión hasta la finalización de la eliminación
     Given I navigate to page "http://localhost:2368/ghost"
     And I wait for 5 seconds
     When I enter email "<Usuario1>"
