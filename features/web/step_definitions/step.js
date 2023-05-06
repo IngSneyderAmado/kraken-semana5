@@ -1,5 +1,5 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-//const expect = require('chai').expect;
+const expect = require('chai').expect;
 
 When('I enter email {kraken-string}', async function (email) {
     let element = await this.driver.$('input[name="identification"]');
@@ -178,3 +178,53 @@ When('I delete the post', async function () {
 });
 
 
+
+When('I click staff', async function() {
+    let element = await this.driver.$('a[href="#/staff/"]');
+    return await element.click();
+})
+
+When('I click invite', async function() {
+    let element = await this.driver.$('button[class="gh-btn gh-btn-green"]');
+    return await element.click();
+})
+
+
+When('I enter mailinvita {kraken-string}', async function (emailinvita) {
+    let element = await this.driver.$('input[name="email"]');
+    return await element.setValue(emailinvita);
+});
+
+
+When('I select role {kraken-string}', async function (role) {
+    let element = await this.driver.$('select[name="role"]');
+    await element.click;
+    let element2 = await this.driver.$('option[value="'+role+'"]')
+    return await element2.click;
+});
+
+When('I click invitenow', async function() {
+    let element = await this.driver.$('button[class="gh-btn gh-btn-green gh-btn-icon ember-view"]');
+    return await element.click();
+})
+
+When('I click usuario', async function() {
+    let element = await this.driver.$('a[href="#/staff/pruebas/"]');
+    return await element.click();
+})
+
+When('I enter fullname {kraken-string}', async function (fullname) {
+    let element = await this.driver.$('input[id="user-name"]');
+    return await element.setValue(fullname);
+});
+
+When('I click savename', async function() {
+    let element = await this.driver.$('button[class="gh-btn gh-btn-blue gh-btn-icon ember-view"]');
+    return await element.click();
+})
+
+
+Then('I check Name with fullname {kraken-string} is in the list', async function (fullname) {
+    let element = await this.driver.$(".//*//article[contains(@class, 'apps-card-app')]//*//h3[text() = '" + fullname + "']");
+    return expect(await element.isExisting()).to.be.true;
+}); 

@@ -14,14 +14,15 @@ Scenario: Se inicia sesion y se va al menu staff para invitar un usuario
     And I wait for 2 seconds
     And I click invite
     And I wait for 2 seconds
-    When I enter invitarmail "<invitemail>"
+    When I enter mailinvita "<invitemail>"
     And I wait for 2 seconds
-
-
-    #When I enter tagdescription "<tagdescription1>"
-    #And I wait for 2 seconds
-    #And I click savetag
-    #And I wait for 2 seconds
+    When I select role "<role>"
+    And I wait for 2 seconds
+    And I click invitenow
+    And I wait for 5 seconds
+    
+    
+    
     #And I click tags
     #And I wait for 2 seconds
     #And I click pruebaCreacion
