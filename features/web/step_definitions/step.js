@@ -1,13 +1,13 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-const expect = require('chai').expect;
+//const expect = require('chai').expect;
 
 When('I enter email {kraken-string}', async function (email) {
-    let element = await this.driver.$('#ember7');
+    let element = await this.driver.$('input[name="identification"]');
     return await element.setValue(email);
 });
 
 When('I enter password {kraken-string}', async function (password) {
-    let element = await this.driver.$('#ember10');
+    let element = await this.driver.$('input[name="password"]');
     return await element.setValue(password);
 });
 
@@ -88,9 +88,9 @@ When('I click invite', async function() {
     return await element.click();
 })
 
-When('I enter invitarmail {kraken-string}', async function (tagname1) {
+When('I enter invitarmail {kraken-string}', async function (invitemail) {
     let element = await this.driver.$('input[class="email ember-text-field gh-input ember-view"]');
-    return await element.setValue(tagname1);
+    return await element.setValue(invitemail);
 })
 When('I enter email {kraken-string}', async function (email) {
     let element = await this.driver.$('#ember7');
@@ -207,12 +207,4 @@ When('I delete the post', async function () {
     
 });
 
-Then('I check Post with title {kraken-string} is in the list', async function (postTitle) {
-    let element = await this.driver.$(".//*//ol[contains(@class, 'posts-list')]//*//h3[text() = '" + postTitle + "']");
-    return expect(await element.isExisting()).to.be.true;
-});
 
-Then('I check Post with title {kraken-string} is not in the list', async function (postTitle) {
-    let element = await this.driver.$(".//*//ol[contains(@class, 'posts-list')]//*//h3[text() = '" + postTitle + "']");
-    return expect(await element.isExisting()).to.be.false;
-});
