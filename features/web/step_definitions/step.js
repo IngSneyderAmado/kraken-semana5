@@ -1,4 +1,5 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
+const expect = require('chai').expect;
 
 When('I enter email {kraken-string}', async function (email) {
     let element = await this.driver.$('#ember7');
@@ -74,3 +75,129 @@ When('I click confirmareliminaciontag', async function() {
     let element = await this.driver.$('button[class="gh-btn gh-btn-red gh-btn-icon ember-view"]');
     return await element.click();
 })
+
+
+When('I enter email {kraken-string}', async function (email) {
+    let element = await this.driver.$('#ember7');
+    return await element.setValue(email);
+});
+
+When('I enter password {kraken-string}', async function (password) {
+    let element = await this.driver.$('#ember10');
+    return await element.setValue(password);
+});
+
+When('I click next', async function() {
+    let element = await this.driver.$('#ember12');
+    return await element.click();
+});
+
+When('I click Posts menu', async function() {
+    let element = await this.driver.$(".gh-nav-list-new > a[href='#/posts/']");
+    return await element.click();
+});
+
+When('I click in New post', async function() {
+    let element = await this.driver.$('.gh-nav-new-post');
+    return await element.click();
+});
+
+When('I write in post title {kraken-string}', async function (text) {
+    let element = await this.driver.$('.gh-editor-title');
+    return await element.setValue(text);
+});
+
+When('I Write in post text {kraken-string}', async function (text) {
+    let element = await this.driver.$('.koenig-editor__editor');
+    return await element.setValue(text);
+});
+
+When('I click in Publish', async function() {
+    let element = await this.driver.$('.gh-publishmenu');
+    return await element.click();
+});
+
+When('I click Schedule it for later', async function() {
+    let element = await this.driver.$(".//*//div[contains(@class, 'gh-publishmenu-radio')]//*//div[text() = 'Schedule it for later']");
+    return await element.click();
+});
+
+When('I click Schedule button', async function() {
+    let element = await this.driver.$('.gh-publishmenu-button');
+    return await element.click();
+    
+
+});
+
+When('I click in Publish button', async function() {
+    let element = await this.driver.$('.gh-publishmenu-button');
+    return await element.click();
+});
+
+When('I click in Cancel button', async function() {
+    let element = await this.driver.$('.gh-btn.gh-btn-outline.gh-btn-link');
+    return await element.click();
+});
+
+When('I click in Posts', async function() {
+    let element = await this.driver.$('.blue.link.fw4.flex.items-center.ember-view');
+    return await element.click();
+});
+
+When('I click published posts menu', async function() {
+    let elementPostsButton = await this.driver.$("a[href='#/posts/?type=published']");
+    return await elementPostsButton.click();
+});
+
+When('I click scheduled posts menu', async function() {
+    let elementPostsButton = await this.driver.$("a[href='#/posts/?type=scheduled']");
+    return await elementPostsButton.click();
+});
+
+When('I click draft posts menu', async function() {
+    let elementPostsButton = await this.driver.$("a[href='#/posts/?type=draft']");
+    return await elementPostsButton.click();
+});
+
+When('I click in a Post', async function() {
+    let element = await this.driver.$('.gh-list-row');
+    return await element.click();
+});
+
+When('I select the post with title {kraken-string}', async function (postTitle) {
+    let element = await this.driver.$(".//*//ol[contains(@class, 'posts-list')]//*//h3[text() = '" + postTitle + "']");
+    return await element.click();
+});
+
+When('I click post settings', async function () {
+    let element = await this.driver.$(".post-settings");
+    return await element.click();
+});
+
+When('I click delete post', async function () {
+    let element = await this.driver.$("button.settings-menu-delete-button");
+    return await element.click();
+});
+
+When('I click confirm delete post', async function () {
+    let element = await this.driver.$(".modal-content > .modal-footer > .gh-btn-red");
+    return await element.click();
+});
+
+When('I delete the post', async function () {
+    let menuButton = await this.driver.$("button.post-settings");
+    await menuButton.click();
+    let deleteButton = await this.driver.$("button.settings-menu-delete-button");
+    return await deleteButton.click();
+    
+});
+
+Then('I check Post with title {kraken-string} is in the list', async function (postTitle) {
+    let element = await this.driver.$(".//*//ol[contains(@class, 'posts-list')]//*//h3[text() = '" + postTitle + "']");
+    return expect(await element.isExisting()).to.be.true;
+});
+
+Then('I check Post with title {kraken-string} is not in the list', async function (postTitle) {
+    let element = await this.driver.$(".//*//ol[contains(@class, 'posts-list')]//*//h3[text() = '" + postTitle + "']");
+    return expect(await element.isExisting()).to.be.false;
+});
