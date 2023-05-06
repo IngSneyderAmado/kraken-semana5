@@ -1,9 +1,15 @@
 {
-    "Usuario1": "pruebasautomatizadas@uniandes.edu.co",
-    "Password1": "pruebasautomatizadas",
+    "host": "http://localhost:2368/",
+    "Usuario1": "juandacalji@gmail.com",
+    "Password1": "1q2w3e4r5t6y7u8i9o",
     "tagname1": "Prueba creación tag",
     "tagdescription1": "Se crea un tag de prueba para validar la funcionalidad",
     "tagnameeditado1": "Prueba editar tag",
     "tagdescriptioneditado1": "Se edita un tag de prueba para validar la funcionalidad",
-    "titulopagina1": "Se agrega el título de la página"
+    "titulopagina1": "Se agrega el título de la página",
+
+    "page_title": "pagina-1",
+    "page_title_schedule": "pagina-2-schedule",
+    "page_title_draft": "pagina-3-draft",
+    "edicion_description": "descripcion nueva"
 }
