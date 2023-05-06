@@ -74,3 +74,20 @@ When('I click confirmareliminaciontag', async function() {
     let element = await this.driver.$('button[class="gh-btn gh-btn-red gh-btn-icon ember-view"]');
     return await element.click();
 })
+
+
+When('I click staff', async function() {
+    let element = await this.driver.$('#ember52');
+    return await element.click();
+})
+
+
+When('I click invite', async function() {
+    let element = await this.driver.$('button[class="gh-btn gh-btn-green"]');
+    return await element.click();
+})
+
+When('I enter invitarmail {kraken-string}', async function (tagname1) {
+    let element = await this.driver.$('input[class="email ember-text-field gh-input ember-view"]');
+    return await element.setValue(tagname1);
+})
