@@ -8,7 +8,7 @@ Scenario: Como admin elimino una página
   And I wait for 1 seconds
   When I click pages
   And I click new page
-  And I create a page with "<page_title>" "descripcion de prueba pagina 1"
+  And I create a page with "<page_title_delete>" "descripcion de prueba pagina 1"
   And I publish it now
   And I wait for 1 seconds
   And I send a signal to user 2 containing "page created"
@@ -28,9 +28,9 @@ Scenario: Como admin elimino una página
 @user2 @web
 Scenario: Como usuario externo compruebo que la página fue eliminada
   Given I wait for a signal containing "page created" for 30 seconds
-  When I navigate to page "<host>" "<page_title>"
+  When I navigate to page "<host>" "<page_title_delete>"
   And I wait for 1 seconds
-  And I check if the page was created with the name "<page_title>"
+  And I check if the page was created with the name "<page_title_delete>"
   And I wait for 1 seconds
   And I send a signal to user 1 containing "page created checked"
   And I wait for 1 seconds
