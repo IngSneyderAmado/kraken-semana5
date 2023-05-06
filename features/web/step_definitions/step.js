@@ -223,6 +223,11 @@ When('I click savename', async function() {
     return await element.click();
 })
 
+When, Then('I reload', async function () {
+    await this.deviceClient.browser.refresh();
+});
+
+
 
 Then('I check Name with fullname {kraken-string} is in the list', async function (fullname) {
     let element = await this.driver.$(".//*//article[contains(@class, 'apps-card-app')]//*//h3[text() = '" + fullname + "']");
