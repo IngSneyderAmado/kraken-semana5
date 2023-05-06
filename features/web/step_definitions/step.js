@@ -223,6 +223,11 @@ When('I click savename', async function() {
     return await element.click();
 })
 
+When('I click revoke', async function() {
+    let element = await this.driver.$('a[href="#revoke"]');
+    return await element.click();
+})
+
 When, Then('I reload', async function () {
     await this.deviceClient.browser.refresh();
 });

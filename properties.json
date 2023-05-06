@@ -1,7 +1,7 @@
 {
     "host": "http://localhost:2368/",
-    "Usuario1": "juandacalji@gmail.com",
-    "Password1": "1q2w3e4r5t6y7u8i9o",
+    "Usuario1": "pruebasautomatizadas@uniandes.edu.co",
+    "Password1": "pruebasautomatizadas",
     "tagname1": "Prueba creación tag",
     "tagdescription1": "Se crea un tag de prueba para validar la funcionalidad",
     "tagnameeditado1": "Prueba editar tag",
