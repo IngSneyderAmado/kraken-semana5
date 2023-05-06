@@ -1,7 +1,7 @@
 Feature: Invitar usuario
 
 @user1 @web
-Scenario: Se inicia sesion y se va al menu staff para invitar un usuario
+Scenario: Se inicia sesion, se invita un usuario y luego revoka su invitacion
     Given I navigate to page "http://localhost:2368/ghost"
     And I wait for 5 seconds
     When I enter email "<Usuario1>"

@@ -232,7 +232,35 @@ When, Then('I reload', async function () {
     await this.deviceClient.browser.refresh();
 });
 
+When('I click General', async function() {
+    let element = await this.driver.$('a[href="#/settings/general/"]');
+    return await element.click();
+})
 
+When('I click expand', async function() {
+    let element = await this.driver.$('button[class="gh-btn"]');
+    return await element.click();
+})
+
+When('I enter title {kraken-string}', async function (title) {
+    let element = await this.driver.$('div.gh-setting-content-extended div.form-group .ember-text-field');
+    return await element.setValue(title);
+});
+
+When('I enter descripcion {kraken-string}', async function (descripcion) {
+    let element= await this.driver.$('div.gh-setting-content-extended div.description-container .ember-text-field');
+    return await element.setValue(descripcion);
+});
+
+When('I click savegeneral', async function() {
+    let element = await this.driver.$('button[class="gh-btn gh-btn-blue gh-btn-icon ember-view"]');
+    return await element.click();
+})
+
+When('I click checkbox', async function() {
+    let element = await this.driver.$('label[class="switch"]');
+    return await element.click();
+})
 
 Then('I check Name with fullname {kraken-string} is in the list', async function (fullname) {
     let element = await this.driver.$(".//*//article[contains(@class, 'apps-card-app')]//*//h3[text() = '" + fullname + "']");

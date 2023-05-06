@@ -13,5 +13,7 @@
     "page_title": "pagina-1",
     "page_title_schedule": "pagina-2-schedule",
     "page_title_draft": "pagina-3-draft",
-    "edicion_description": "descripcion nueva"
+    "edicion_description": "descripcion nueva",
+    "titulo_general":"pruebas automatizadas 2",
+    "descripcion_general":"se crea una descripcion general"
 }
