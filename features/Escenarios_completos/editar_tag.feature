@@ -32,4 +32,7 @@ Scenario: Se edita un tag desde el inicio de sesión hasta la finalización de l
     And I wait for 2 seconds
     And I click tags
     And I wait for 2 seconds
+    Then I check tag description "<tagname1>"
+    And I wait for 2 seconds
+    
     

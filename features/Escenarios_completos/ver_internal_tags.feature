@@ -12,5 +12,19 @@ Scenario: Se crea un tag desde el inicio de sesión hasta la finalización de la
     And I wait for 2 seconds
     And I click tags
     And I wait for 2 seconds
+    And I click newTag
+    And I wait for 2 seconds
+    When I enter tagname "<tagname1>"
+    And I wait for 2 seconds
+    When I enter tagdescription "<tagdescription1>"
+    And I wait for 2 seconds
+    And I click savetag
+    And I wait for 2 seconds
+    And I click tags
+    And I wait for 2 seconds
+    Then I check tag name "<tagname1>"
+    And I wait for 2 seconds
     And I click internal-tags
     And I wait for 2 seconds
+
+    

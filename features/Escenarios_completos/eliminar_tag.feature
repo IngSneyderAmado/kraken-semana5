@@ -22,6 +22,8 @@ Scenario: Se elimina un tag desde el inicio de sesión hasta la finalización de
     And I wait for 2 seconds
     And I click tags
     And I wait for 2 seconds
+    Then I check tag name "<tagname1>"
+    And I wait for 2 seconds
     And I click pruebaCreacion
     And I wait for 2 seconds
     And I click eliminartag

@@ -1,4 +1,6 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
+const { assert } = require('console');
+const { reverse } = require('lodash');
 const expect = require('chai').expect;
 
 When('I enter email {kraken-string}', async function (email) {
@@ -41,8 +43,8 @@ When('I click savetag', async function() {
     return await element.click();
 })
 
-When('I click pruebaCreacion', async function() {
-    let element = await this.driver.$('h3.gh-tag-list-name=Prueba creación tag');
+When('I click pruebaCreacion', async function () {
+    let element = await this.driver.$('h3.gh-tag-list-name=Tag');
     return await element.click();
 })
 
@@ -283,7 +285,7 @@ When('I click tag-list', async function() {
 });
 
 When('I click tag-element', async function() {
-    let element = await this.driver.$(".//*//li[text() = '" + "Prueba asociar tag" + "']");
+    let element = await this.driver.$(".//*//li[text() = '" + "Tag" + "']");
     return await element.click();
 });
 
@@ -308,7 +310,19 @@ When('I click return-posts', async function() {
 });
 
 When('I click internal-tags', async function() {
-    let element = await this.driver.$('div.gh-contentfilter button:contains("Internal tags")');
-    console.log('Este es el elemento: ', element);
+    let element = await this.driver.$('section.view-actions div.gh-contentfilter button:last-child');
     return await element.click();
 });
+
+Then('I check tag name {kraken-string}', async function (sametagname) {
+    let tagname = await this.driver.$("h3.gh-tag-list-name").getText();
+    return expect(tagname).to.equal(sametagname);
+});
+
+
+Then('I check tag description {kraken-string}', async function (differenttagdescription) {
+    let tagdescription = await this.driver.$("p.gh-tag-list-description").getText();
+    return expect(tagdescription).to.not.equal(differenttagdescription);
+});
+
+

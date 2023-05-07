@@ -2,9 +2,9 @@
     "host": "http://localhost:2368/",
     "Usuario1": "pruebasautomatizadas@uniandes.edu.co",
     "Password1": "pruebasautomatizadas",
-    "tagname1": "Prueba creación tag",
+    "tagname1": "Tag",
     "tagdescription1": "Se crea un tag de prueba para validar la funcionalidad",
-    "tagnameeditado1": "Prueba editar tag",
+    "tagnameeditado1": "Tag",
     "tagdescriptioneditado1": "Se edita un tag de prueba para validar la funcionalidad",
     "titulopagina1": "Se agrega el título de la página",
     "invitemail":"pruebasautomatizadas2@uniandes.edu.co",
@@ -15,8 +15,6 @@
     "page_title_schedule": "pagina-2-schedule",
     "page_title_draft": "pagina-3-draft",
     "edicion_description": "descripcion nueva",
-    "tagpruebaasociar": "Prueba asociar tag",
-    "tagdescripciónpruebaasociar": "Se asocia un tag de prueba para validar la funcionalidad",
-    "titulo_general":"pruebas automatizadas 2",
-    "descripcion_general":"se crea una descripcion general"
+    "tagpruebaasociar": "Tag",
+    "tagdescripciónpruebaasociar": "Se asocia un tag de prueba para validar la funcionalidad"
 }
